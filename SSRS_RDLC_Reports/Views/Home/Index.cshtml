@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h2>Reports List</h2>
+
+<a id="ReportUrl_Performance" href="@Url.Action("ReportTemplate", "Report",
+   new { ReportName = "MFC_DiagnosisLOR", ReportDescription = "MFC Diagnosis Report", searchQuery="reportType=ReportDate&optionSelection=''&areaOfficeCode=''&subReportType=AdmitDateOption&dateFrom=2019-06-06&dateTo=2020-01-01", Width = 100, Height = 650 })">MFC Diagnosis Report</a>
+
+<a id="ReportUrl_Performance" href="@Url.Action("Report", "Report",
+   new { ReportType = "Provider", Status = "0", OptionSelection="1", areaOfficeCode="0", locType="0", dateType="AdmitDateOption", dateFrom="", dateTo = "2020-03-03"})">MFC Diagnosis Report</a>
+

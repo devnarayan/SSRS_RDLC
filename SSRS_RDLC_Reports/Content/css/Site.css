@@ -1,0 +1,735 @@
+﻿
+body {
+    padding-top: 88px;
+    padding-bottom: 40px;
+    background-color: #f2f2f2;
+    background-color: #e6e6e6;
+    font-size: 12px;
+    margin-top: auto;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+    background-color: white;
+}
+/*.topbar {
+    background-color: #EFF0E8;
+    height: 100px;
+    border: none;
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 0px;
+}*/
+.multiselect-container{
+    overflow:auto;
+}
+.dropdown-menu{
+    max-height:300px;
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 100% !important;
+        padding-left: 50px !important;
+        background-color:#FAF8DF;
+    }
+}
+
+.control-label {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.form-control {
+    height: 30px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.th {
+    color: #00808b;
+    text-decoration: none;
+    text-align: center;
+}
+
+.td {
+    color: #00808b;
+    text-decoration: none;
+    text-align: center;
+}
+
+.resetcolor {
+    color: #ffffff;
+}
+
+.Legend {
+    font-weight: bold;
+    padding-bottom: 7px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #00808B;
+}
+
+
+/*body
+{
+    padding-top: 88px;
+    padding-bottom: 40px;
+    background-color: #f2f2f2;
+    background-color: #e6e6e6;
+    font-size: 12px;
+    margin-top: auto;
+}*/
+
+.navbar-brand {
+    padding: 1px;
+    margin-right: 20px;
+}
+
+.navbar-default {
+    background-color: white;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    color: #00A0AF;
+    text-align: center;
+    text-shadow: 1px 1px 2px #808080;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+h3 {
+    text-shadow: 1px 1px 2px #808080;
+}
+
+h4 {
+    text-shadow: 1px 1px 2px #b3b3b3;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+    /*background-color: #e8ffff;*/
+    text-align: left;
+    font-size: 14px;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td {
+    font-size: 14px;
+    text-align: left;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > th {
+    text-align: left;
+    font-size: 12px;
+}
+
+.table thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dddddd;
+    background-color: lightgoldenrodyellow;
+
+}
+
+.table-condensed thead > tr > th,
+.table-condensed tbody > tr > th,
+.table-condensed tfoot > tr > th,
+.table-condensed thead > tr > td,
+.table-condensed tbody > tr > td,
+.table-condensed tfoot > tr > td {
+    padding: 2px;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #d2e8fe;
+}
+
+.caption {
+    text-align: left;
+    color: #317eac;
+    font-weight: bold;
+}
+
+/*.btn
+{
+    min-width: 62px;
+}
+
+.btn-default
+{
+    color: #00A0AF;
+}*/
+.btn-primary {
+    color: #ffffff;
+    background-color: #00A0AF;
+    border-color: #00A0AF;
+    min-width: 80px;
+}
+
+.btn-link {
+    padding: 0 0;
+}
+/*.btn-primary
+{
+    min-width: 80px;
+    padding: 5px 5px;
+}*/
+
+.alert {
+    padding: 3px 5px 3px 4px;
+    margin-top: 1px;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+    font-size: 16px;
+    text-align: center;
+}
+
+.alert-info {
+    color: #FFFFFF;
+    background-color: #00A0AF;
+    border-color: #00717C;
+}
+
+.alert-warning {
+    color: #997300;
+    background-color: #F6EAAC;
+    border-color: #fbeed5;
+}
+
+fieldset {
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.inlineBlock{
+    display:inline-block !important;
+}
+
+.form-horizontal .control-label,
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    margin-bottom: 10px;
+}
+
+dl {
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #00A0AF;
+    border-color: #00A0AF;
+}
+
+/**************************************************** NEW ELEMENTS  *********************************************/
+
+.topbar {
+   
+    background-image: url('../../images/doh-new-banner-2014-11-03-100-portion.jpg');
+    background-repeat: repeat-x;
+    height: 102px;
+    padding-left: 0px;
+    padding-top:10px;
+}
+
+.topbar-nav {
+    margin: 7.5px -15px;
+}
+
+    .topbar-nav > li > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        line-height: 20px;
+    }
+
+
+.topbar-links {
+    padding: 4px 10px;
+    margin-bottom: 0;
+    list-style: none;
+    background-color: #000000;
+    border-radius: 4px;
+    color: #CCCCCC;
+    font-size: 11px;
+}
+
+    .topbar-links a {
+        color: #CCCCCC;
+    }
+
+        .topbar-links a:hover {
+            color: #B9DBFE;
+        }
+
+    .topbar-links > li {
+        display: inline-block;
+    }
+
+        .topbar-links > li + li:before {
+            padding: 0 5px;
+            color: #cccccc;
+            content: "|\00a0";
+        }
+
+    .topbar-links > .active {
+        color: #999999;
+    }
+
+
+.bottombar {
+    position: fixed;
+    margin-top: 8px;
+    left: 0;
+    bottom: 0;
+    min-height: 30px;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color: #f2f2f2;
+    width: 100%;
+    background-image: url('/Content/images/doh-footer.jpg');
+    background-repeat: repeat-x;
+}
+
+.container-main {
+    /*background-color: #f2f2f2;*/
+    background-color: white;
+    /*background-color: #ffffff;*/
+    box-shadow: 3px 3px 12px #333333;
+    -webkit-box-shadow: 3px 3px 12px #333333;
+    -moz-box-shadow: 3px 3px 12px #333333;
+    min-height: 200px;
+    margin-top: 100px;
+    padding-bottom: 15px;
+    margin-right: 60px;
+    margin-left: 3px;
+    max-height:500px;
+    overflow-y:scroll;
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+    margin-right: 0px;
+    margin-left: 300px !important;
+}
+
+
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}
+
+.field-validation-error {
+    color: #b94a48;
+    display: inline-block;
+    padding-top: 2px;
+}
+/*text-box, multi-line are needed to overright html controls when using EditorFor() 
+.text-box
+{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 6px 6px;
+    line-height: 1.3;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.multi-line
+{
+    height: auto;
+    min-height: 60px;
+}
+
+.text-box:focus
+{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+select
+{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 6px 6px;
+    line-height: 1.3;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+    select:focus
+    {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    }
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #b94a48;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #b94a48;
+    margin-left: 180px;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}*/
+
+
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle,
+.navbar,
+.navbar-inverse .navbar-inner {
+    filter: none;
+    background-image: none;
+}
+
+
+/*Background for navbar*/
+.nav-background {
+    background-color: #00A0AF;
+    border-radius: 7px;
+    padding: 1px;
+    z-index: 99;
+}
+
+.nav > li > a {
+    color: white;
+    /*background-color: #00A0AF;*/
+    font-size: 15px;
+}
+    .nav > li > a.btn-success {
+        color: white;
+        background-color: #457AAE;
+        font-size: 15px;
+    }
+
+    .nav > li > a:hover {
+        text-decoration: none;
+        color: white;
+        background-color: #457AAE;
+        border: #00717C;
+    }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover {
+    text-decoration: none;
+    color: #0A5399;
+    background-color: #d9edf7;
+    font-weight: bold;
+    border: #0A5399;
+}
+
+.main-menu {
+    /*background-color: #ffc000;*/
+    background-color: #ffeebf;
+    border-color: #ffc000;
+    border-radius: 7px;
+    padding: 0px;
+    z-index: 99;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .main-menu > li {
+        border-color: #ffc000;
+    }
+
+        .main-menu > li > a {
+            color: #00A0AF;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 5px 5px;
+            text-decoration: none;
+        }
+
+            .main-menu > li > a:hover {
+                color: #F18307;
+                background-color: #ffeebf;
+            }
+
+.panel-primary {
+    border-color: #f2f2f2;
+}
+/*.panel-primary-table {
+}*/
+
+    .panel-primary > .panel-heading {
+        color: #ffffff;
+        text-align: center;
+        background-color: #428bca;
+        border-color: #428bca;
+        font-size: 16px;
+    }
+
+    .panel-primary > .panel-heading {
+        background-color: #00A0AF;
+        padding: 5px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        font-weight: bold;
+    }
+
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid #ddd !important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none !important;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper
+.dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #00A0AF !important;
+}
+/*.paginate_button
+{
+    box-sizing:border-box !important;
+    display:inline-block;
+    min-width:1.5em;padding:0.5em 1em;margin-left:2px;text-align:center;text-decoration:none !important;cursor:pointer;*cursor:hand;color:#00A0AF !important;border:1px solid transparent;border-radius:2px}*/
+
+
+
+.dataTables_wrapper .dataTables_paginate {
+    float: inherit !important;
+    text-align: center !important;
+    padding-top: 0px !important;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        color: #00A0af !important;
+    }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+            color: #00A0af !important;
+        }
+
+.paginate_button {
+    color: #00A0af !important;
+    border-right: 1px solid #dddddd !important;
+}
+
+.myPageButton {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding-top: 0px;
+    margin-top: 10px !important;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid #dddddd !important;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    margin-left: 500px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+    background: linear-gradient(to bottom, #00A0AF 100%, #dcdcdc 100%) !important;
+}
+
+table.dataTable thead .sorting_asc {
+    background-image: url("../Content/themes/base/images/sort_asc.png");
+    box-sizing: border-box !important;
+    padding-left: 10px !important
+}
+
+table.dataTable thead .sorting {
+    background-image: url("../Content/themes/base/images/sort_both1.png");
+    box-sizing: border-box !important;
+    padding-left: 10px
+}
+
+table.dataTable thead .sorting_desc {
+    background-image: url("../Content/themes/base/images/sort_desc.png");
+    box-sizing: border-box !important;
+    padding-left: 10px !important
+}
+
+table.dataTable thead .sorting_asc_disabled {
+    background-image: url("../Content/themes/base/images/sort_asc_disabled.png")
+}
+
+table.dataTable thead .sorting_desc_disabled {
+    background-image: url("../Content/themes/base/images/sort_desc_disabled.png")
+}
+
+.noSortingImage {
+    background-image: url("../Content/themes/base/images/sort_both1.png") !important;
+}
+
+
+/*Left Side navbar*/
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #F18307; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+/* Style page content */
+.main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.pdfHeaderBorder{
+    border-bottom:1px solid #E0E0E0;
+}
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (max-width:1366) {
+    .jqgridHeight {
+       height:60% !important
+    }
+}
+@media (min-width:1368) {
+    .jqgridHeight {
+        height: 70% !important
+    }
+    
+    
+
+}
+.bg-danger {
+    /*background-color: red;*/
+    font-size: medium;
+    color: red;
+    font: bold 12px;
+}
+
+.isdisabled {
+    /*color: gray !important;*/
+    background-color: gray !important;
+    opacity: 1;
+    cursor:default;
+}
+.md-top-20 {
+    margin-top: 20px;
+}
+.md-top-10 {
+    margin-top: 10px;
+}
+
+.dx-checkbox-container {
+    height: auto !important;
+}

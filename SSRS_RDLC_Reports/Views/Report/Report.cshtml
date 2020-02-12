@@ -1,0 +1,285 @@
+﻿@model SSRS_RDLC_Reports.ViewModel.ReportInfo
+@{
+    ViewBag.Title = "MFC Reports";
+}
+@section contents{
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <style type="text/css">
+        .filterPanel input {
+            margin-right: 3px;
+        }
+
+        .filterPanel .form-group {
+            margin-right: 10px;
+        }
+
+        .filterPanel .filterOption {
+            border-bottom: 1px solid gray;
+        }
+    </style>
+}
+<div class=" col-xs-12 col-md-12 col-lg-12 col-sm-12" style="background-color:#FAF8DF;">
+
+    <div align="right" class="pull-right md-top-20">
+        <div class="submit-progress hidden">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <h2>MFC Reports</h2>
+    <div class="filterPanel">
+        <div class="form-inline filterOption">
+            @*<div class="form-group">
+            <input type="radio" name="filterOption" value="Status" id="Status" /><label for="Status">MFC Status</label>
+        </div>
+        <div class="form-group">
+            <input type="radio" name="filterOption" value="ReportDate" id="ReportDate" /><label for="ReportDate">Date Range</label>
+        </div>*@
+            <div class="form-group">
+                <input type="radio" name="filterOption" value="LOC" id="LOC" /><label for="LOC">LOC</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" name="filterOption" value="Diagnosis" id="Diagnosis" /><label for="Diagnosis">Diagnosis</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="filterOption" value="NotPlacedReason" id="NotPlacedReason" /><label for="NotPlacedReason">Not Placed Reason</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="filterOption" value="DischargeDestination" id="DischargeDestination" /><label for="DischargeDestination">Discharge Destination</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" name="filterOption" value="Provider" id="Provider" /><label for="Provider">Client Origination</label>
+            </div>
+
+        </div>
+
+        <input type="hidden" id="hdnReportSD" />
+        <input type="hidden" id="hdnReportED" />
+
+        <input type="hidden" id="hdnAdmissionSD" />
+        <input type="hidden" id="hdnAdmissionED" />
+
+        <input type="hidden" id="hdnDischargeSD" />
+        <input type="hidden" id="hdnDischargeED" />
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="hidden" id="AreaOfficeCodeMFC" />
+                <label for="txtAreaOffice" class="control-label">Area Office</label><br />
+                <select id="txtAreaOffice" class="form-control">
+                    <option value="0">All</option>
+                    @foreach (var county in ViewBag.AreaOffices as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtMFCStatus" class="control-label">MFC Status</label><br />
+                <select id="txtMFCStatus" class="form-control">
+                    <option value="0">All</option>
+                    @foreach (var county in ViewBag.MFCStatus as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group" id="divOrganization">
+                <label for="txtOrganization" class="control-label">Organization</label><br />
+                <select id="txtOrganization" class="form-control">
+                    <option value="0">All</option>
+                    @foreach (var county in ViewBag.clientorg as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group" id="divDischargeDestination">
+                <label for="txtDischargeDest" class="control-label">Discharge Destination</label><br />
+                <select id="txtDischargeDest" class="form-control">
+                    <option value="0">All</option>
+                    @foreach (var county in ViewBag.DischargeDest as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group" id="divNotPlacedReason">
+                <label for="txtReason" class="control-label">Not Placement Reason</label><br />
+                <select id="txtReason" class="form-control">
+                    <option value="0">All</option>
+                    @foreach (var county in ViewBag.Reason as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group divLOCOption">
+                <input type="radio" name="LOCFilterOption" value="ReferringLOC" id="ReferringLOC" /><label for="ReferringLOC">Referring LOC</label>
+                <input type="radio" name="LOCFilterOption" value="DischargeLOC" id="DischargeLOC" /><label for="DischargeLOC">Discharge LOC</label>
+                <input type="radio" name="LOCFilterOption" value="MFCLOC" id="MFCLOC" /><label for="MFCLOC">MFC LOC</label> <br />
+                <select id="txtloc" class="form-control">
+                    <option value="All">All</option>
+                    @foreach (var county in ViewBag.loc as List<SelectListItem>)
+                    {
+                        <option value="@county.Value">@county.Text</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group" id="divReferralDateOption">
+                <input type="radio" name="dateTypeOption" value="ReferralDateOption" id="ReferralDateOption" /><label for="ReferralDateOption">Referral Date</label>
+                <input type="radio" name="dateTypeOption" value="ReportDateOption" id="ReportDateOption" /><label for="ReportDateOption">Report Date</label>
+                <input type="radio" name="dateTypeOption" value="AdmitDateOption" id="AdmitDateOption" /><label for="AdmitDateOption">Admit Date</label>
+                <input type="radio" name="dateTypeOption" value="DischargeDateOption" id="DischargeDateOption" /><label for="DischargeDateOption">Discharge Date</label>
+                <br />
+                <input type="text" id="txtReportDateRange" name="reportDaterange" class="form-control" />
+                <button id="btnSearch" type="button" class="btn btn-primary">Search</button>
+            </div>
+
+
+        </div>
+    </div>
+    <br />
+    <iframe id="frmReport" src="@Model.ReportURL" frameborder="0" style="@String.Format("width:{0}%; height: {1}px;", Model.Width, Model.Height)" scrolling="no">
+    </iframe>
+
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/cupertino/jquery-ui.css" type="text/css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0].toLowerCase() == param.toLowerCase()) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+            function showHideDiv(reportType, optionSelection) {
+                if (reportType == 'LOC') {
+                    $("#divOrganization").css("display", "none");
+                    $("#divDischargeDestination").css("display", "none");
+                    $("#divNotPlacedReason").css("display", "none");
+                    $(".divLOCOption").css("display", "inline-block");
+
+                    $("input[name=LOCFilterOption][value='ReferringLOC']").prop("checked", true);
+                    $("#txtloc").val(optionSelection);
+                }
+                else if (reportType == "Provider") {
+                    $("#divOrganization").css("display", "inline-block");
+                    $("#divDischargeDestination").css("display", "none");
+                    $("#divNotPlacedReason").css("display", "none");
+                    $(".divLOCOption").css("display", "none");
+                    $("#txtOrganization").val(optionSelection);
+
+                }
+                else if (reportType == "Diagnosis") {
+                    $("#divOrganization").css("display", "none");
+                    $("#divDischargeDestination").css("display", "none");
+                    $("#divNotPlacedReason").css("display", "none");
+                    $(".divLOCOption").css("display", "none");
+                   // $("#txtloc").val(optionSelection);
+                }
+                else if (reportType == "NotPlacedReason") {
+                    $("#divOrganization").css("display", "none");
+                    $("#divDischargeDestination").css("display", "none");
+                    $("#divNotPlacedReason").css("display", "inline-block");
+                    $(".divLOCOption").css("display", "none");
+                    $("#txtReason").val(optionSelection);
+                }
+                else if (reportType == "DischargeDestination") {
+                    $("#divOrganization").css("display", "none");
+                    $("#divDischargeDestination").css("display", "inline-block");
+                    $("#divNotPlacedReason").css("display", "none");
+                    $(".divLOCOption").css("display", "none");
+                    $("#txtDischargeDest").val(optionSelection);
+                }
+            }
+            var reportType = GetParameterValues("reportType");
+            var status = GetParameterValues("status");
+            var optionSelection = GetParameterValues("optionSelection");
+            var areaOfficeCode = GetParameterValues("areaOfficeCode");
+            var locType = GetParameterValues("locType");
+            var dateType = GetParameterValues("dateType");
+            var dateFrom = GetParameterValues("dateFrom");
+            var dateTo = GetParameterValues("dateTo");
+            if (dateFrom == undefined || dateFrom.length == 0) {
+                dateFrom=moment().add(-30,'days').format('MM-DD-YYYY')
+                dateTo=moment().format('MM-DD-YYYY')
+            }
+
+            $("#txtAreaOffice").val(areaOfficeCode);
+            $("#txtMFCStatus").val(status);
+            showHideDiv(reportType, optionSelection);
+
+            $("input[name=filterOption][value='" + reportType + "']").prop("checked", true);
+            $("input[name=dateTypeOption][value='" + dateType + "']").prop("checked", true);
+            $("input[name=LOCFilterOption][value='" + locType + "']").prop("checked", true);
+
+            $('input[type=radio][name=filterOption]').change(function () {
+                console.log(this.value)
+                showHideDiv(this.value, 0);
+            });
+
+            console.log(moment().format('MM-DD-YYYY'));
+            $("#hdnReportSD").val(moment(dateFrom).format('MM-DD-YYYY'));
+            $("#hdnReportED").val(moment(dateTo).format('MM-DD-YYYY'));
+            $('input[name="reportDaterange"]').daterangepicker({
+                opens: 'left',
+                startDate: moment(dateFrom),
+                endDate: moment(dateTo),
+            }, function (start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                $("#hdnReportSD").val(start.format('MM-DD-YYYY'));
+                $("#hdnReportED").val(end.format('MM-DD-YYYY'));
+            });
+
+            $("#btnSearch").click(function () {
+                var filterType = $('input[type=radio][name=filterOption]:checked').val();
+                var statusSelection = $("#txtMFCStatus option").filter(":selected").val();
+                var dateType = $('input[type=radio][name=dateTypeOption]:checked').val();
+                var optionSelection = ""; var locType = "";
+                if (filterType == "LOC") {
+                    optionSelection = $("#txtloc option").filter(":selected").val();
+                    locType = $('input[type=radio][name=LOCFilterOption]:checked').val();
+                }
+                else if (filterType == "Provider") {
+                    optionSelection = $("#txtOrganization option").filter(":selected").val();
+                }
+                else if (filterType == "Diagnosis") {
+                    optionSelection = $("#txtloc option").filter(":selected").val();
+                }
+                else if (filterType == "NotPlacedReason") {
+                    optionSelection = $("#txtReason option").filter(":selected").val();
+                }
+                else if (filterType == "DischargeDestination") {
+                    optionSelection = $("#txtDischargeDest option").filter(":selected").val();
+                }
+                var areaOffice =  $("#txtAreaOffice option").filter(":selected").val();
+                var query = "?reportType=" + filterType + "&status=" + statusSelection + "&optionSelection=" + optionSelection + "&areaOfficeCode=" + areaOffice
+                    + "&locType=" + locType + "&dateType=" + dateType + "&dateFrom=" + $("#hdnReportSD").val() + "&dateTo=" + $("#hdnReportED").val();
+                console.log("Search" + query);
+
+                window.location.href = "/Report/Report" + query;
+
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var headerHeight = $('.header-top-area').outerHeight();
+            if (headerHeight == undefined || headerHeight == "") {
+                headerHeight = 60;
+            }
+            var winHeight = $(window).height();
+        });
+    </script>
+
+}

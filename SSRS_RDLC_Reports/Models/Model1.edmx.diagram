@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d05a485063f43d2bb3787ec46f191ba" Name="Diagram1" ZoomLevel="23">
+        <EntityTypeShape EntityType="Model.AreaOffice" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientAreaOffice" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ClientMaster" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CMAT_Assessment" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CMAT_PC" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MFC_Status_LK" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Status" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_CMAT_PC_ClientMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Status_ClientMaster" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.CM_AttachmentType_LK" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.CMAT_PC_DischargeDisposition_LK" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.CMAT_PC_MFC_ClientOrigination_LK" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.CMAT_PC_MFC_DischargeDest_LK" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.CMAT_PC_MFC_Reason_LK" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.CMAT_PC_MPC_LevelOfCare_LK" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.CMAT_Staffing_Discharge_LK" Width="1.5" PointX="10.375" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

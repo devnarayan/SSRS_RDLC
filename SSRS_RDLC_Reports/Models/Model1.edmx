@@ -1,0 +1,1259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AreaOffice">
+          <Key>
+            <PropertyRef Name="AreaOfficeCode" />
+          </Key>
+          <Property Name="AreaOfficeCode" Type="int" Nullable="false" />
+          <Property Name="AreaOfficeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ClientAreaOffice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" />
+          <Property Name="AreaOfficeCode" Type="int" />
+        </EntityType>
+        <EntityType Name="ClientMaster">
+          <Key>
+            <PropertyRef Name="MasterID" />
+          </Key>
+          <Property Name="MasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScreeningID" Type="int" />
+          <Property Name="DataLoad" Type="bit" />
+          <Property Name="isReferral" Type="bit" />
+          <Property Name="isAttestation" Type="bit" />
+          <Property Name="isCMAT" Type="bit" />
+          <Property Name="isMFC" Type="bit" />
+          <Property Name="ReferralSrc" Type="varchar" MaxLength="25" />
+          <Property Name="OtherReferralSrc" Type="varchar" MaxLength="50" />
+          <Property Name="C_Src" Type="varchar" MaxLength="50" />
+          <Property Name="OtherCMATSrc" Type="varchar" MaxLength="50" />
+          <Property Name="ReferralDate" Type="datetime" />
+          <Property Name="A_DateReceived" Type="datetime" />
+          <Property Name="C_Date" Type="datetime" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="MI" Type="varchar" MaxLength="1" />
+          <Property Name="DateOfBirth" Type="varchar" MaxLength="8" />
+          <Property Name="Gender" Type="varchar" MaxLength="1" />
+          <Property Name="SSN" Type="varchar" MaxLength="9" />
+          <Property Name="MedicaidID" Type="varchar" MaxLength="10" />
+          <Property Name="KidCareID" Type="varchar" MaxLength="10" />
+          <Property Name="Phone1" Type="varchar" MaxLength="10" />
+          <Property Name="Phone2" Type="varchar" MaxLength="10" />
+          <Property Name="Phone3" Type="varchar" MaxLength="10" />
+          <Property Name="Address1" Type="varchar" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="2" />
+          <Property Name="Zip" Type="varchar" MaxLength="9" />
+          <Property Name="EmailConsent" Type="bit" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="Race" Type="varchar" MaxLength="40" />
+          <Property Name="Ethnicity" Type="varchar" MaxLength="2" />
+          <Property Name="PreferredLanguage" Type="varchar" MaxLength="4" />
+          <Property Name="HealthPlanProvider" Type="varchar" MaxLength="9" />
+          <Property Name="HealthPlanNumber" Type="varchar" MaxLength="9" />
+          <Property Name="PlanProviderNumber" Type="varchar" MaxLength="15" />
+          <Property Name="CaseNo" Type="varchar" MaxLength="10" />
+          <Property Name="PCPTaxID" Type="varchar" MaxLength="9" />
+          <Property Name="PCPFirstName" Type="varchar" MaxLength="30" />
+          <Property Name="PCPLastName" Type="varchar" MaxLength="30" />
+          <Property Name="PGFirstName" Type="varchar" MaxLength="30" />
+          <Property Name="PGLastName" Type="varchar" MaxLength="30" />
+          <Property Name="PMI" Type="varchar" MaxLength="1" />
+          <Property Name="PGPhone" Type="varchar" MaxLength="10" />
+          <Property Name="CMSQuestion1" Type="varchar" MaxLength="1" />
+          <Property Name="CMSQuestion2" Type="varchar" MaxLength="1" />
+          <Property Name="CMSQuestion3" Type="varchar" MaxLength="1" />
+          <Property Name="SpecialNeedCode1" Type="int" />
+          <Property Name="SpecialNeedCode2" Type="int" />
+          <Property Name="SpecialNeedCode3" Type="int" />
+          <Property Name="SpecialNeedNotes" Type="varchar" MaxLength="200" />
+          <Property Name="DoNotCall" Type="bit" />
+          <Property Name="MMI" Type="varchar" MaxLength="10" />
+          <Property Name="OtherID" Type="varchar" MaxLength="15" />
+          <Property Name="OtherIDType" Type="varchar" MaxLength="10" />
+          <Property Name="Resend" Type="bit" />
+          <Property Name="ResponseSentDate" Type="datetime" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="R_OptOut" Type="bit" />
+          <Property Name="A_OptOut" Type="bit" />
+          <Property Name="R_Status" Type="int" />
+          <Property Name="A_Status" Type="varchar" MaxLength="25" />
+          <Property Name="R_Attachment" Type="varchar(max)" />
+          <Property Name="A_Attachment" Type="varchar(max)" />
+          <Property Name="C_Attachment" Type="varchar(max)" />
+          <Property Name="A_AttScannedDt" Type="datetime" />
+          <Property Name="A_Init_Rescreen" Type="varchar" MaxLength="10" />
+          <Property Name="A_MDName" Type="varchar" MaxLength="100" />
+          <Property Name="A_MDMedicaidID" Type="varchar" MaxLength="10" />
+          <Property Name="A_PhysGrpName" Type="varchar" MaxLength="100" />
+          <Property Name="A_PhysGrpAddr" Type="varchar" MaxLength="100" />
+          <Property Name="A_PhysGrpPhone" Type="varchar" MaxLength="10" />
+          <Property Name="A_PhysGrpFax" Type="varchar" MaxLength="10" />
+          <Property Name="A_PhysGrpContact" Type="varchar" MaxLength="60" />
+          <Property Name="A_SignDate" Type="datetime" />
+          <Property Name="A_MDInitialsYN" Type="bit" />
+          <Property Name="A_MedicalReview" Type="varchar" MaxLength="10" />
+          <Property Name="A_MedicalLicenseNumber" Type="varchar" MaxLength="10" />
+          <Property Name="A_FacilityName" Type="varchar" MaxLength="100" />
+          <Property Name="AreaOfficeCode" Type="varchar" MaxLength="50" />
+          <Property Name="Redetermination" Type="bit" />
+          <Property Name="R_CMSEligible" Type="bit" />
+          <Property Name="A_CMSEligible" Type="bit" />
+          <Property Name="WorkedBy" Type="varchar" MaxLength="50" />
+          <Property Name="WorkedDate" Type="datetime" />
+          <Property Name="IsDuplicate" Type="bit" />
+          <Property Name="isSDelete" Type="bit" />
+          <Property Name="isEnrolled" Type="bit" />
+          <Property Name="EnrollmentStartDate" Type="datetime" />
+          <Property Name="EnrollmentEndDate" Type="datetime" />
+          <Property Name="R_ScreeningDt" Type="datetime" />
+          <Property Name="A_ScreeningDt" Type="datetime" />
+          <Property Name="isMergedDelete" Type="bit" />
+          <Property Name="MergedMasterId" Type="int" />
+          <Property Name="C_PGRelation" Type="int" />
+          <Property Name="C_PGRelation_Other" Type="varchar" MaxLength="50" />
+          <Property Name="isDupAHCAOutbound" Type="bit" />
+          <Property Name="isNotSameE_Outbound" Type="bit" />
+          <Property Name="isHistoryDelete" Type="bit" />
+          <Property Name="isSafetyNet" Type="bit" />
+          <Property Name="isBNet" Type="bit" />
+          <Property Name="Phone1Extension" Type="varchar" MaxLength="10" />
+          <Property Name="Phone2Extension" Type="varchar" MaxLength="10" />
+          <Property Name="PGPhoneExtension" Type="varchar" MaxLength="10" />
+          <Property Name="A_PhysGrpPhoneExt" Type="varchar" MaxLength="10" />
+          <Property Name="KidCareAccNo" Type="varchar" MaxLength="10" />
+          <Property Name="OtherInsuranceName" Type="varchar" MaxLength="500" />
+          <Property Name="OtherInsuranceID" Type="varchar" MaxLength="100" />
+          <Property Name="CmatDeletion_Dt" Type="datetime" />
+          <Property Name="isCDelete" Type="bit" />
+          <Property Name="MfcDeletion_Dt" Type="datetime" />
+          <Property Name="isMfcDelete" Type="bit" />
+          <Property Name="CMATReOpenReason" Type="nvarchar" MaxLength="50" />
+          <Property Name="MFCReOpenReason" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CM_AttachmentType_LK">
+          <Key>
+            <PropertyRef Name="A_TypeID" />
+          </Key>
+          <Property Name="A_TypeID" Type="int" Nullable="false" />
+          <Property Name="AttachmentType" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CMAT_Assessment">
+          <Key>
+            <PropertyRef Name="CMAT_AssessmentID" />
+          </Key>
+          <Property Name="CMAT_AssessmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="CMATID" Type="int" />
+          <Property Name="CMAT_PCID" Type="int" />
+          <Property Name="MedicalSummary" Type="varchar(max)" />
+          <Property Name="PsychosocialSummary" Type="varchar(max)" />
+          <Property Name="Agencies" Type="varchar" MaxLength="256" />
+          <Property Name="GC_DateMeasured" Type="datetime" />
+          <Property Name="GC_AgeMeasured" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_AgeinYM" Type="varchar" MaxLength="20" />
+          <Property Name="GC_GestationalAge" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_GestationalAgeUnit" Type="varchar" MaxLength="8" />
+          <Property Name="GC_CorrectedAge" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_CorrectedAgeUnit" Type="varchar" MaxLength="8" />
+          <Property Name="GC_Height" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_HeightUnit" Type="varchar" MaxLength="12" />
+          <Property Name="GC_Weight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_WeightUnit" Type="varchar" MaxLength="10" />
+          <Property Name="GC_HeadCircumference" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GC_HeadUnit" Type="varchar" MaxLength="12" />
+          <Property Name="GC_BMI" Type="varchar" MaxLength="250" />
+          <Property Name="GC_GrowthConcern" Type="varchar" MaxLength="500" />
+          <Property Name="GC_OtherGrowthDescription" Type="varchar" MaxLength="500" />
+          <Property Name="Nutrition1" Type="varchar" MaxLength="5" />
+          <Property Name="N1_Desc" Type="varchar" MaxLength="500" />
+          <Property Name="Nutrition2" Type="varchar" MaxLength="5" />
+          <Property Name="N2_Desc" Type="varchar" MaxLength="500" />
+          <Property Name="Nutrition3" Type="varchar" MaxLength="5" />
+          <Property Name="N3_Desc" Type="varchar" MaxLength="500" />
+          <Property Name="Nutrition_Other" Type="varchar" MaxLength="500" />
+          <Property Name="E_OrderedDt" Type="datetime" />
+          <Property Name="ClinicalSignOff_Name" Type="varchar" MaxLength="50" />
+          <Property Name="ClinicalSignOff_Title" Type="varchar" MaxLength="50" />
+          <Property Name="ClinicalSignOff_Date" Type="datetime" />
+          <Property Name="PsychosocialSignOff_Name" Type="varchar" MaxLength="50" />
+          <Property Name="PsychosocialSignOff_Title" Type="varchar" MaxLength="50" />
+          <Property Name="PsychosocialSignOff_Date" Type="datetime" />
+          <Property Name="CompletionDate" Type="datetime" />
+          <Property Name="isCompleted" Type="bit" Nullable="false" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="isSubmitted" Type="int" />
+          <Property Name="WorkedBy" Type="varchar" MaxLength="40" />
+          <Property Name="WorkedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="40" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="AmendCount" Type="int" />
+          <Property Name="IsStaffingDone" Type="bit" />
+          <Property Name="A_StaffingType" Type="varchar" MaxLength="50" />
+          <Property Name="S_StaffingDt" Type="nvarchar" MaxLength="50" />
+          <Property Name="S_StaffingType" Type="varchar" MaxLength="50" />
+          <Property Name="S_StaffingPurpose" Type="varchar" MaxLength="1000" />
+          <Property Name="S_NursingAssessmentUpdate" Type="varchar" MaxLength="1000" />
+          <Property Name="S_Discussion" Type="varchar(max)" />
+          <Property Name="S_TaskList" Type="varchar" MaxLength="1000" />
+          <Property Name="S_AdditionalConsiderationsID" Type="int" />
+          <Property Name="S_AdditionalOther" Type="varchar" MaxLength="100" />
+          <Property Name="S_CC" Type="varchar" MaxLength="1000" />
+          <Property Name="S_NextStaffingDt" Type="datetime" />
+          <Property Name="S_SignOffDate" Type="datetime" />
+          <Property Name="S_AmendCounter" Type="int" />
+          <Property Name="S_isAmend" Type="bit" />
+          <Property Name="S_isDraft" Type="bit" />
+          <Property Name="S_isCompleted" Type="bit" />
+          <Property Name="MFCID" Type="int" />
+          <Property Name="S_ClinicalSignOff_Name" Type="varchar" MaxLength="50" />
+          <Property Name="S_ClinicalSignOff_Title" Type="varchar" MaxLength="50" />
+          <Property Name="S_ClinicalSignOff_Date" Type="datetime" />
+          <Property Name="S_PsychosocialSignOff_Name" Type="varchar" MaxLength="50" />
+          <Property Name="S_PsychosocialSignOff_Title" Type="varchar" MaxLength="50" />
+          <Property Name="S_PsychosocialSignOff_Date" Type="datetime" />
+          <Property Name="A_StaffingDt" Type="nvarchar" MaxLength="50" />
+          <Property Name="SignOffCount" Type="int" />
+          <Property Name="S_SignOffCount" Type="int" />
+          <Property Name="S_CompletionDate" Type="datetime" />
+          <Property Name="S_CurrentStabilityStatement" Type="varchar" MaxLength="500" />
+          <Property Name="A_SignOffCompletionBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="S_WorkedBy" Type="varchar" MaxLength="40" />
+          <Property Name="S_WorkedDt" Type="datetime" />
+          <Property Name="S_LevelOfCare" Type="varchar" MaxLength="20" />
+          <Property Name="S_LevelOfReimbursment" Type="varchar" MaxLength="100" />
+          <Property Name="S_Modelwaiver" Type="varchar" MaxLength="15" />
+          <Property Name="S_Duration" Type="int" />
+          <Property Name="S_PsychosocialAssessmentUpdate" Type="varchar" MaxLength="1000" />
+          <Property Name="S_ProgramEligibility" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CMAT_PC">
+          <Key>
+            <PropertyRef Name="CMAT_PCID" />
+          </Key>
+          <Property Name="CMAT_PCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" Nullable="false" />
+          <Property Name="CMATID" Type="int" />
+          <Property Name="StaffingDt" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstStaffingDt" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstStaffingDt2" Type="nvarchar" MaxLength="50" />
+          <Property Name="NextStaffingDt" Type="datetime" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="StaffingType" Type="varchar" MaxLength="20" />
+          <Property Name="C_DischargeDt" Type="datetime" />
+          <Property Name="CMAT_Status" Type="varchar" MaxLength="20" />
+          <Property Name="ProgramEligibility" Type="varchar" MaxLength="20" />
+          <Property Name="L_Reimbursement" Type="varchar" MaxLength="100" />
+          <Property Name="L_Care" Type="varchar" MaxLength="20" />
+          <Property Name="ModelWaiver" Type="varchar" MaxLength="15" />
+          <Property Name="PreviousStability" Type="varchar" MaxLength="10" />
+          <Property Name="CurrentStability" Type="varchar" MaxLength="10" />
+          <Property Name="DischargeDisposition" Type="varchar" MaxLength="50" />
+          <Property Name="OtherDischarge_D" Type="varchar" MaxLength="50" />
+          <Property Name="MMA_Plan" Type="varchar" MaxLength="100" />
+          <Property Name="MMA_CM_FN" Type="varchar" MaxLength="30" />
+          <Property Name="MMA_CM_LN" Type="varchar" MaxLength="30" />
+          <Property Name="MMA_Phone1" Type="varchar" MaxLength="10" />
+          <Property Name="MMA_Phone2" Type="varchar" MaxLength="10" />
+          <Property Name="MMA_Email" Type="varchar" MaxLength="100" />
+          <Property Name="MMA_Address" Type="varchar" MaxLength="100" />
+          <Property Name="AgencyName" Type="varchar" MaxLength="50" />
+          <Property Name="Dependency_CM_FN" Type="varchar" MaxLength="50" />
+          <Property Name="Dependency_CM_LN" Type="varchar" MaxLength="50" />
+          <Property Name="D_CM_Phone1" Type="varchar" MaxLength="10" />
+          <Property Name="D_CM_Phone2" Type="varchar" MaxLength="10" />
+          <Property Name="D_CM_Email" Type="varchar" MaxLength="100" />
+          <Property Name="D_CM_Address" Type="varchar" MaxLength="100" />
+          <Property Name="MFC_P_FN" Type="varchar" MaxLength="50" />
+          <Property Name="MFC_P_LN" Type="varchar" MaxLength="50" />
+          <Property Name="MFC_P_Phone1" Type="varchar" MaxLength="10" />
+          <Property Name="MFC_P_Phone2" Type="varchar" MaxLength="10" />
+          <Property Name="MFC_P_Email" Type="varchar" MaxLength="100" />
+          <Property Name="MFC_P_Address" Type="varchar" MaxLength="100" />
+          <Property Name="WorkedBy" Type="varchar" MaxLength="30" />
+          <Property Name="WorkedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="30" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="StaffingTypeComments" Type="nvarchar" MaxLength="50" />
+          <Property Name="StaffingAttachment" Type="varchar" MaxLength="256" />
+          <Property Name="MFCID" Type="int" />
+          <Property Name="MPC_MFCReferralDt" Type="datetime" />
+          <Property Name="MPC_ClientPlaced" Type="bit" />
+          <Property Name="MPC_Comments" Type="varchar" MaxLength="250" />
+          <Property Name="MPC_ClientOrigination" Type="int" />
+          <Property Name="MPC_ClientOrigination_Other" Type="varchar" MaxLength="40" />
+          <Property Name="MPC_AdmitDt" Type="datetime" />
+          <Property Name="MPC_DischargeDt" Type="datetime" />
+          <Property Name="MPC_L_Care" Type="varchar" MaxLength="20" />
+          <Property Name="MPC_DischargeDest" Type="int" />
+          <Property Name="MPC_DischargeDest_Other" Type="varchar" MaxLength="40" />
+          <Property Name="MPC_ReasonNotPlaced" Type="int" />
+          <Property Name="MPC_ReasonNotPlaced_Other" Type="varchar" MaxLength="40" />
+          <Property Name="First_L_Care" Type="varchar" MaxLength="20" />
+          <Property Name="First_L_Reimbursement" Type="varchar" MaxLength="100" />
+          <Property Name="MMA_Phone1Ext" Type="varchar" MaxLength="10" />
+          <Property Name="MMA_Phone2Ext" Type="varchar" MaxLength="10" />
+          <Property Name="D_CM_Phone1Ext" Type="varchar" MaxLength="10" />
+          <Property Name="D_CM_Phone2Ext" Type="varchar" MaxLength="10" />
+          <Property Name="MFC_P_Phone1Ext" Type="varchar" MaxLength="10" />
+          <Property Name="MFC_P_Phone2Ext" Type="varchar" MaxLength="10" />
+          <Property Name="MFC_StatusID" Type="int" />
+          <Property Name="MFC_StatusID_Dt" Type="date" />
+          <Property Name="LOC_StartDt" Type="datetime" />
+          <Property Name="LOC_EndDt" Type="datetime" />
+          <Property Name="TotalApprovedDuuration" Type="int" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_DischargeDisposition_LK">
+          <Key>
+            <PropertyRef Name="D_DispositionID" />
+          </Key>
+          <Property Name="D_DispositionID" Type="int" Nullable="false" />
+          <Property Name="D_DispositionName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_ClientOrigination_LK">
+          <Key>
+            <PropertyRef Name="ClientOriginationID" />
+          </Key>
+          <Property Name="ClientOriginationID" Type="int" Nullable="false" />
+          <Property Name="ClientOrigination" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_DischargeDest_LK">
+          <Key>
+            <PropertyRef Name="DischargeDestID" />
+          </Key>
+          <Property Name="DischargeDestID" Type="int" Nullable="false" />
+          <Property Name="DischargeDestDesc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_Reason_LK">
+          <Key>
+            <PropertyRef Name="MFCPC_ReasonID" />
+          </Key>
+          <Property Name="MFCPC_ReasonID" Type="int" Nullable="false" />
+          <Property Name="ReasonDesc" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MPC_LevelOfCare_LK">
+          <Key>
+            <PropertyRef Name="MPC_L_CareID" />
+          </Key>
+          <Property Name="MPC_L_CareID" Type="int" Nullable="false" />
+          <Property Name="MPC_LevelOfCare" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CMAT_Staffing_Discharge_LK">
+          <Key>
+            <PropertyRef Name="Discharge_ID" />
+          </Key>
+          <Property Name="Discharge_ID" Type="int" Nullable="false" />
+          <Property Name="Discharge_Reason" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MFC_Status_LK">
+          <Key>
+            <PropertyRef Name="MFC_StatusID" />
+          </Key>
+          <Property Name="MFC_StatusID" Type="int" Nullable="false" />
+          <Property Name="MFC_Status" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterID" Type="int" />
+          <Property Name="ContactType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContactDate" Type="datetime" />
+          <Property Name="WorkedBy" Type="varchar" MaxLength="50" />
+          <Property Name="WorkedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_CMAT_PC_ClientMaster">
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="1" />
+          <End Role="CMAT_PC" Type="Self.CMAT_PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientMaster">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="CMAT_PC">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_ClientMaster">
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="0..1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientMaster">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="AreaOffice" EntityType="Self.AreaOffice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientAreaOffice" EntityType="Self.ClientAreaOffice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientMaster" EntityType="Self.ClientMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CM_AttachmentType_LK" EntityType="Self.CM_AttachmentType_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_Assessment" EntityType="Self.CMAT_Assessment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC" EntityType="Self.CMAT_PC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC_DischargeDisposition_LK" EntityType="Self.CMAT_PC_DischargeDisposition_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC_MFC_ClientOrigination_LK" EntityType="Self.CMAT_PC_MFC_ClientOrigination_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC_MFC_DischargeDest_LK" EntityType="Self.CMAT_PC_MFC_DischargeDest_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC_MFC_Reason_LK" EntityType="Self.CMAT_PC_MFC_Reason_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_PC_MPC_LevelOfCare_LK" EntityType="Self.CMAT_PC_MPC_LevelOfCare_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMAT_Staffing_Discharge_LK" EntityType="Self.CMAT_Staffing_Discharge_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MFC_Status_LK" EntityType="Self.MFC_Status_LK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CMAT_PC_ClientMaster" Association="Self.FK_CMAT_PC_ClientMaster">
+            <End Role="ClientMaster" EntitySet="ClientMaster" />
+            <End Role="CMAT_PC" EntitySet="CMAT_PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_ClientMaster" Association="Self.FK_Status_ClientMaster">
+            <End Role="ClientMaster" EntitySet="ClientMaster" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AreaOffice">
+          <Key>
+            <PropertyRef Name="AreaOfficeCode" />
+          </Key>
+          <Property Name="AreaOfficeCode" Type="Int32" Nullable="false" />
+          <Property Name="AreaOfficeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ClientAreaOffice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" />
+          <Property Name="AreaOfficeCode" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ClientMaster">
+          <Key>
+            <PropertyRef Name="MasterID" />
+          </Key>
+          <Property Name="MasterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScreeningID" Type="Int32" />
+          <Property Name="DataLoad" Type="Boolean" />
+          <Property Name="isReferral" Type="Boolean" />
+          <Property Name="isAttestation" Type="Boolean" />
+          <Property Name="isCMAT" Type="Boolean" />
+          <Property Name="isMFC" Type="Boolean" />
+          <Property Name="ReferralSrc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="OtherReferralSrc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_Src" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherCMATSrc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReferralDate" Type="DateTime" Precision="3" />
+          <Property Name="A_DateReceived" Type="DateTime" Precision="3" />
+          <Property Name="C_Date" Type="DateTime" Precision="3" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SSN" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="MedicaidID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KidCareID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Phone1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Phone2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Phone3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="EmailConsent" Type="Boolean" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Race" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Ethnicity" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PreferredLanguage" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="HealthPlanProvider" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="HealthPlanNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="PlanProviderNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CaseNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PCPTaxID" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="PCPFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PCPLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PGFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PGLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PMI" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PGPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CMSQuestion1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CMSQuestion2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CMSQuestion3" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SpecialNeedCode1" Type="Int32" />
+          <Property Name="SpecialNeedCode2" Type="Int32" />
+          <Property Name="SpecialNeedCode3" Type="Int32" />
+          <Property Name="SpecialNeedNotes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DoNotCall" Type="Boolean" />
+          <Property Name="MMI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OtherID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="OtherIDType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Resend" Type="Boolean" />
+          <Property Name="ResponseSentDate" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="R_OptOut" Type="Boolean" />
+          <Property Name="A_OptOut" Type="Boolean" />
+          <Property Name="R_Status" Type="Int32" />
+          <Property Name="A_Status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="R_Attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="A_Attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="C_Attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="A_AttScannedDt" Type="DateTime" Precision="3" />
+          <Property Name="A_Init_Rescreen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_MDName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="A_MDMedicaidID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpAddr" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpFax" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpContact" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="A_SignDate" Type="DateTime" Precision="3" />
+          <Property Name="A_MDInitialsYN" Type="Boolean" />
+          <Property Name="A_MedicalReview" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_MedicalLicenseNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_FacilityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AreaOfficeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Redetermination" Type="Boolean" />
+          <Property Name="R_CMSEligible" Type="Boolean" />
+          <Property Name="A_CMSEligible" Type="Boolean" />
+          <Property Name="WorkedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDuplicate" Type="Boolean" />
+          <Property Name="isSDelete" Type="Boolean" />
+          <Property Name="isEnrolled" Type="Boolean" />
+          <Property Name="EnrollmentStartDate" Type="DateTime" Precision="3" />
+          <Property Name="EnrollmentEndDate" Type="DateTime" Precision="3" />
+          <Property Name="R_ScreeningDt" Type="DateTime" Precision="3" />
+          <Property Name="A_ScreeningDt" Type="DateTime" Precision="3" />
+          <Property Name="isMergedDelete" Type="Boolean" />
+          <Property Name="MergedMasterId" Type="Int32" />
+          <Property Name="C_PGRelation" Type="Int32" />
+          <Property Name="C_PGRelation_Other" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isDupAHCAOutbound" Type="Boolean" />
+          <Property Name="isNotSameE_Outbound" Type="Boolean" />
+          <Property Name="isHistoryDelete" Type="Boolean" />
+          <Property Name="isSafetyNet" Type="Boolean" />
+          <Property Name="isBNet" Type="Boolean" />
+          <Property Name="Phone1Extension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Phone2Extension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PGPhoneExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="A_PhysGrpPhoneExt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KidCareAccNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OtherInsuranceName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OtherInsuranceID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CmatDeletion_Dt" Type="DateTime" Precision="3" />
+          <Property Name="isCDelete" Type="Boolean" />
+          <Property Name="MfcDeletion_Dt" Type="DateTime" Precision="3" />
+          <Property Name="isMfcDelete" Type="Boolean" />
+          <Property Name="CMATReOpenReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MFCReOpenReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CMAT_PC" Relationship="Self.FK_CMAT_PC_ClientMaster" FromRole="ClientMaster" ToRole="CMAT_PC" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Status_ClientMaster" FromRole="ClientMaster" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="CMAT_Assessment">
+          <Key>
+            <PropertyRef Name="CMAT_AssessmentID" />
+          </Key>
+          <Property Name="CMAT_AssessmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="CMATID" Type="Int32" />
+          <Property Name="CMAT_PCID" Type="Int32" />
+          <Property Name="MedicalSummary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PsychosocialSummary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Agencies" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="GC_DateMeasured" Type="DateTime" Precision="3" />
+          <Property Name="GC_AgeMeasured" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_AgeinYM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GC_GestationalAge" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_GestationalAgeUnit" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GC_CorrectedAge" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_CorrectedAgeUnit" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="GC_Height" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_HeightUnit" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="GC_Weight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_WeightUnit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GC_HeadCircumference" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GC_HeadUnit" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="GC_BMI" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GC_GrowthConcern" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="GC_OtherGrowthDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Nutrition1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="N1_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Nutrition2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="N2_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Nutrition3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="N3_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Nutrition_Other" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="E_OrderedDt" Type="DateTime" Precision="3" />
+          <Property Name="ClinicalSignOff_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClinicalSignOff_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClinicalSignOff_Date" Type="DateTime" Precision="3" />
+          <Property Name="PsychosocialSignOff_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PsychosocialSignOff_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PsychosocialSignOff_Date" Type="DateTime" Precision="3" />
+          <Property Name="CompletionDate" Type="DateTime" Precision="3" />
+          <Property Name="isCompleted" Type="Boolean" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="isSubmitted" Type="Int32" />
+          <Property Name="WorkedBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="WorkedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="AmendCount" Type="Int32" />
+          <Property Name="IsStaffingDone" Type="Boolean" />
+          <Property Name="A_StaffingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_StaffingDt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="S_StaffingType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_StaffingPurpose" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="S_NursingAssessmentUpdate" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="S_Discussion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="S_TaskList" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="S_AdditionalConsiderationsID" Type="Int32" />
+          <Property Name="S_AdditionalOther" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="S_CC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="S_NextStaffingDt" Type="DateTime" Precision="3" />
+          <Property Name="S_SignOffDate" Type="DateTime" Precision="3" />
+          <Property Name="S_AmendCounter" Type="Int32" />
+          <Property Name="S_isAmend" Type="Boolean" />
+          <Property Name="S_isDraft" Type="Boolean" />
+          <Property Name="S_isCompleted" Type="Boolean" />
+          <Property Name="MFCID" Type="Int32" />
+          <Property Name="S_ClinicalSignOff_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_ClinicalSignOff_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_ClinicalSignOff_Date" Type="DateTime" Precision="3" />
+          <Property Name="S_PsychosocialSignOff_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_PsychosocialSignOff_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_PsychosocialSignOff_Date" Type="DateTime" Precision="3" />
+          <Property Name="A_StaffingDt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SignOffCount" Type="Int32" />
+          <Property Name="S_SignOffCount" Type="Int32" />
+          <Property Name="S_CompletionDate" Type="DateTime" Precision="3" />
+          <Property Name="S_CurrentStabilityStatement" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="A_SignOffCompletionBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="S_WorkedBy" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="S_WorkedDt" Type="DateTime" Precision="3" />
+          <Property Name="S_LevelOfCare" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="S_LevelOfReimbursment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="S_Modelwaiver" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="S_Duration" Type="Int32" />
+          <Property Name="S_PsychosocialAssessmentUpdate" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="S_ProgramEligibility" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC">
+          <Key>
+            <PropertyRef Name="CMAT_PCID" />
+          </Key>
+          <Property Name="CMAT_PCID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" Nullable="false" />
+          <Property Name="CMATID" Type="Int32" />
+          <Property Name="StaffingDt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstStaffingDt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstStaffingDt2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NextStaffingDt" Type="DateTime" Precision="3" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="StaffingType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="C_DischargeDt" Type="DateTime" Precision="3" />
+          <Property Name="CMAT_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ProgramEligibility" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="L_Reimbursement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="L_Care" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModelWaiver" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PreviousStability" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CurrentStability" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DischargeDisposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherDischarge_D" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Plan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_CM_FN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_CM_LN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Phone1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Phone2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AgencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dependency_CM_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dependency_CM_LN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Phone1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Phone2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_FN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_LN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Phone1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Phone2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WorkedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WorkedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="StaffingTypeComments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StaffingAttachment" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="MFCID" Type="Int32" />
+          <Property Name="MPC_MFCReferralDt" Type="DateTime" Precision="3" />
+          <Property Name="MPC_ClientPlaced" Type="Boolean" />
+          <Property Name="MPC_Comments" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MPC_ClientOrigination" Type="Int32" />
+          <Property Name="MPC_ClientOrigination_Other" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MPC_AdmitDt" Type="DateTime" Precision="3" />
+          <Property Name="MPC_DischargeDt" Type="DateTime" Precision="3" />
+          <Property Name="MPC_L_Care" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MPC_DischargeDest" Type="Int32" />
+          <Property Name="MPC_DischargeDest_Other" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MPC_ReasonNotPlaced" Type="Int32" />
+          <Property Name="MPC_ReasonNotPlaced_Other" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="First_L_Care" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="First_L_Reimbursement" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Phone1Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MMA_Phone2Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Phone1Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="D_CM_Phone2Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Phone1Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_P_Phone2Ext" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MFC_StatusID" Type="Int32" />
+          <Property Name="MFC_StatusID_Dt" Type="DateTime" Precision="0" />
+          <Property Name="LOC_StartDt" Type="DateTime" Precision="3" />
+          <Property Name="LOC_EndDt" Type="DateTime" Precision="3" />
+          <Property Name="TotalApprovedDuuration" Type="Int32" />
+          <NavigationProperty Name="ClientMaster" Relationship="Self.FK_CMAT_PC_ClientMaster" FromRole="CMAT_PC" ToRole="ClientMaster" />
+        </EntityType>
+        <EntityType Name="MFC_Status_LK">
+          <Key>
+            <PropertyRef Name="MFC_StatusID" />
+          </Key>
+          <Property Name="MFC_StatusID" Type="Int32" Nullable="false" />
+          <Property Name="MFC_Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterID" Type="Int32" />
+          <Property Name="ContactType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ContactDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ClientMaster" Relationship="Self.FK_Status_ClientMaster" FromRole="Status" ToRole="ClientMaster" />
+        </EntityType>
+        <Association Name="FK_CMAT_PC_ClientMaster">
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="1" />
+          <End Role="CMAT_PC" Type="Self.CMAT_PC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientMaster">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="CMAT_PC">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Status_ClientMaster">
+          <End Role="ClientMaster" Type="Self.ClientMaster" Multiplicity="0..1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientMaster">
+              <PropertyRef Name="MasterID" />
+            </Principal>
+            <Dependent Role="Status">
+              <PropertyRef Name="MasterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CAP30Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AreaOffices" EntityType="Self.AreaOffice" />
+          <EntitySet Name="ClientAreaOffices" EntityType="Self.ClientAreaOffice" />
+          <EntitySet Name="ClientMasters" EntityType="Self.ClientMaster" />
+          <EntitySet Name="CMAT_Assessment" EntityType="Self.CMAT_Assessment" />
+          <EntitySet Name="CMAT_PC" EntityType="Self.CMAT_PC" />
+          <EntitySet Name="MFC_Status_LK" EntityType="Self.MFC_Status_LK" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <AssociationSet Name="FK_CMAT_PC_ClientMaster" Association="Self.FK_CMAT_PC_ClientMaster">
+            <End Role="ClientMaster" EntitySet="ClientMasters" />
+            <End Role="CMAT_PC" EntitySet="CMAT_PC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Status_ClientMaster" Association="Self.FK_Status_ClientMaster">
+            <End Role="ClientMaster" EntitySet="ClientMasters" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <EntitySet Name="CM_AttachmentType_LK" EntityType="Model.CM_AttachmentType_LK" />
+          <EntitySet Name="CMAT_PC_DischargeDisposition_LK" EntityType="Model.CMAT_PC_DischargeDisposition_LK" />
+          <EntitySet Name="CMAT_PC_MFC_ClientOrigination_LK" EntityType="Model.CMAT_PC_MFC_ClientOrigination_LK" />
+          <EntitySet Name="CMAT_PC_MFC_DischargeDest_LK" EntityType="Model.CMAT_PC_MFC_DischargeDest_LK" />
+          <EntitySet Name="CMAT_PC_MFC_Reason_LK" EntityType="Model.CMAT_PC_MFC_Reason_LK" />
+          <EntitySet Name="CMAT_PC_MPC_LevelOfCare_LK" EntityType="Model.CMAT_PC_MPC_LevelOfCare_LK" />
+          <EntitySet Name="CMAT_Staffing_Discharge_LK" EntityType="Model.CMAT_Staffing_Discharge_LK" />
+        </EntityContainer>
+        <EntityType Name="CM_AttachmentType_LK">
+          <Key>
+            <PropertyRef Name="A_TypeID" />
+          </Key>
+          <Property Name="A_TypeID" Type="Int32" Nullable="false" />
+          <Property Name="AttachmentType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_DischargeDisposition_LK">
+          <Key>
+            <PropertyRef Name="D_DispositionID" />
+          </Key>
+          <Property Name="D_DispositionID" Type="Int32" Nullable="false" />
+          <Property Name="D_DispositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_ClientOrigination_LK">
+          <Key>
+            <PropertyRef Name="ClientOriginationID" />
+          </Key>
+          <Property Name="ClientOriginationID" Type="Int32" Nullable="false" />
+          <Property Name="ClientOrigination" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_DischargeDest_LK">
+          <Key>
+            <PropertyRef Name="DischargeDestID" />
+          </Key>
+          <Property Name="DischargeDestID" Type="Int32" Nullable="false" />
+          <Property Name="DischargeDestDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MFC_Reason_LK">
+          <Key>
+            <PropertyRef Name="MFCPC_ReasonID" />
+          </Key>
+          <Property Name="MFCPC_ReasonID" Type="Int32" Nullable="false" />
+          <Property Name="ReasonDesc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_PC_MPC_LevelOfCare_LK">
+          <Key>
+            <PropertyRef Name="MPC_L_CareID" />
+          </Key>
+          <Property Name="MPC_L_CareID" Type="Int32" Nullable="false" />
+          <Property Name="MPC_LevelOfCare" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMAT_Staffing_Discharge_LK">
+          <Key>
+            <PropertyRef Name="Discharge_ID" />
+          </Key>
+          <Property Name="Discharge_ID" Type="Int32" Nullable="false" />
+          <Property Name="Discharge_Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CAP30Entities">
+          <EntitySetMapping Name="AreaOffices">
+            <EntityTypeMapping TypeName="Model.AreaOffice">
+              <MappingFragment StoreEntitySet="AreaOffice">
+                <ScalarProperty Name="AreaOfficeCode" ColumnName="AreaOfficeCode" />
+                <ScalarProperty Name="AreaOfficeName" ColumnName="AreaOfficeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientAreaOffices">
+            <EntityTypeMapping TypeName="Model.ClientAreaOffice">
+              <MappingFragment StoreEntitySet="ClientAreaOffice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="AreaOfficeCode" ColumnName="AreaOfficeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientMasters">
+            <EntityTypeMapping TypeName="Model.ClientMaster">
+              <MappingFragment StoreEntitySet="ClientMaster">
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="ScreeningID" ColumnName="ScreeningID" />
+                <ScalarProperty Name="DataLoad" ColumnName="DataLoad" />
+                <ScalarProperty Name="isReferral" ColumnName="isReferral" />
+                <ScalarProperty Name="isAttestation" ColumnName="isAttestation" />
+                <ScalarProperty Name="isCMAT" ColumnName="isCMAT" />
+                <ScalarProperty Name="isMFC" ColumnName="isMFC" />
+                <ScalarProperty Name="ReferralSrc" ColumnName="ReferralSrc" />
+                <ScalarProperty Name="OtherReferralSrc" ColumnName="OtherReferralSrc" />
+                <ScalarProperty Name="C_Src" ColumnName="C_Src" />
+                <ScalarProperty Name="OtherCMATSrc" ColumnName="OtherCMATSrc" />
+                <ScalarProperty Name="ReferralDate" ColumnName="ReferralDate" />
+                <ScalarProperty Name="A_DateReceived" ColumnName="A_DateReceived" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MI" ColumnName="MI" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="MedicaidID" ColumnName="MedicaidID" />
+                <ScalarProperty Name="KidCareID" ColumnName="KidCareID" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="EmailConsent" ColumnName="EmailConsent" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Ethnicity" ColumnName="Ethnicity" />
+                <ScalarProperty Name="PreferredLanguage" ColumnName="PreferredLanguage" />
+                <ScalarProperty Name="HealthPlanProvider" ColumnName="HealthPlanProvider" />
+                <ScalarProperty Name="HealthPlanNumber" ColumnName="HealthPlanNumber" />
+                <ScalarProperty Name="PlanProviderNumber" ColumnName="PlanProviderNumber" />
+                <ScalarProperty Name="CaseNo" ColumnName="CaseNo" />
+                <ScalarProperty Name="PCPTaxID" ColumnName="PCPTaxID" />
+                <ScalarProperty Name="PCPFirstName" ColumnName="PCPFirstName" />
+                <ScalarProperty Name="PCPLastName" ColumnName="PCPLastName" />
+                <ScalarProperty Name="PGFirstName" ColumnName="PGFirstName" />
+                <ScalarProperty Name="PGLastName" ColumnName="PGLastName" />
+                <ScalarProperty Name="PMI" ColumnName="PMI" />
+                <ScalarProperty Name="PGPhone" ColumnName="PGPhone" />
+                <ScalarProperty Name="CMSQuestion1" ColumnName="CMSQuestion1" />
+                <ScalarProperty Name="CMSQuestion2" ColumnName="CMSQuestion2" />
+                <ScalarProperty Name="CMSQuestion3" ColumnName="CMSQuestion3" />
+                <ScalarProperty Name="SpecialNeedCode1" ColumnName="SpecialNeedCode1" />
+                <ScalarProperty Name="SpecialNeedCode2" ColumnName="SpecialNeedCode2" />
+                <ScalarProperty Name="SpecialNeedCode3" ColumnName="SpecialNeedCode3" />
+                <ScalarProperty Name="SpecialNeedNotes" ColumnName="SpecialNeedNotes" />
+                <ScalarProperty Name="DoNotCall" ColumnName="DoNotCall" />
+                <ScalarProperty Name="MMI" ColumnName="MMI" />
+                <ScalarProperty Name="OtherID" ColumnName="OtherID" />
+                <ScalarProperty Name="OtherIDType" ColumnName="OtherIDType" />
+                <ScalarProperty Name="Resend" ColumnName="Resend" />
+                <ScalarProperty Name="ResponseSentDate" ColumnName="ResponseSentDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="R_OptOut" ColumnName="R_OptOut" />
+                <ScalarProperty Name="A_OptOut" ColumnName="A_OptOut" />
+                <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+                <ScalarProperty Name="A_Status" ColumnName="A_Status" />
+                <ScalarProperty Name="R_Attachment" ColumnName="R_Attachment" />
+                <ScalarProperty Name="A_Attachment" ColumnName="A_Attachment" />
+                <ScalarProperty Name="C_Attachment" ColumnName="C_Attachment" />
+                <ScalarProperty Name="A_AttScannedDt" ColumnName="A_AttScannedDt" />
+                <ScalarProperty Name="A_Init_Rescreen" ColumnName="A_Init_Rescreen" />
+                <ScalarProperty Name="A_MDName" ColumnName="A_MDName" />
+                <ScalarProperty Name="A_MDMedicaidID" ColumnName="A_MDMedicaidID" />
+                <ScalarProperty Name="A_PhysGrpName" ColumnName="A_PhysGrpName" />
+                <ScalarProperty Name="A_PhysGrpAddr" ColumnName="A_PhysGrpAddr" />
+                <ScalarProperty Name="A_PhysGrpPhone" ColumnName="A_PhysGrpPhone" />
+                <ScalarProperty Name="A_PhysGrpFax" ColumnName="A_PhysGrpFax" />
+                <ScalarProperty Name="A_PhysGrpContact" ColumnName="A_PhysGrpContact" />
+                <ScalarProperty Name="A_SignDate" ColumnName="A_SignDate" />
+                <ScalarProperty Name="A_MDInitialsYN" ColumnName="A_MDInitialsYN" />
+                <ScalarProperty Name="A_MedicalReview" ColumnName="A_MedicalReview" />
+                <ScalarProperty Name="A_MedicalLicenseNumber" ColumnName="A_MedicalLicenseNumber" />
+                <ScalarProperty Name="A_FacilityName" ColumnName="A_FacilityName" />
+                <ScalarProperty Name="AreaOfficeCode" ColumnName="AreaOfficeCode" />
+                <ScalarProperty Name="Redetermination" ColumnName="Redetermination" />
+                <ScalarProperty Name="R_CMSEligible" ColumnName="R_CMSEligible" />
+                <ScalarProperty Name="A_CMSEligible" ColumnName="A_CMSEligible" />
+                <ScalarProperty Name="WorkedBy" ColumnName="WorkedBy" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="IsDuplicate" ColumnName="IsDuplicate" />
+                <ScalarProperty Name="isSDelete" ColumnName="isSDelete" />
+                <ScalarProperty Name="isEnrolled" ColumnName="isEnrolled" />
+                <ScalarProperty Name="EnrollmentStartDate" ColumnName="EnrollmentStartDate" />
+                <ScalarProperty Name="EnrollmentEndDate" ColumnName="EnrollmentEndDate" />
+                <ScalarProperty Name="R_ScreeningDt" ColumnName="R_ScreeningDt" />
+                <ScalarProperty Name="A_ScreeningDt" ColumnName="A_ScreeningDt" />
+                <ScalarProperty Name="isMergedDelete" ColumnName="isMergedDelete" />
+                <ScalarProperty Name="MergedMasterId" ColumnName="MergedMasterId" />
+                <ScalarProperty Name="C_PGRelation" ColumnName="C_PGRelation" />
+                <ScalarProperty Name="C_PGRelation_Other" ColumnName="C_PGRelation_Other" />
+                <ScalarProperty Name="isDupAHCAOutbound" ColumnName="isDupAHCAOutbound" />
+                <ScalarProperty Name="isNotSameE_Outbound" ColumnName="isNotSameE_Outbound" />
+                <ScalarProperty Name="isHistoryDelete" ColumnName="isHistoryDelete" />
+                <ScalarProperty Name="isSafetyNet" ColumnName="isSafetyNet" />
+                <ScalarProperty Name="isBNet" ColumnName="isBNet" />
+                <ScalarProperty Name="Phone1Extension" ColumnName="Phone1Extension" />
+                <ScalarProperty Name="Phone2Extension" ColumnName="Phone2Extension" />
+                <ScalarProperty Name="PGPhoneExtension" ColumnName="PGPhoneExtension" />
+                <ScalarProperty Name="A_PhysGrpPhoneExt" ColumnName="A_PhysGrpPhoneExt" />
+                <ScalarProperty Name="KidCareAccNo" ColumnName="KidCareAccNo" />
+                <ScalarProperty Name="OtherInsuranceName" ColumnName="OtherInsuranceName" />
+                <ScalarProperty Name="OtherInsuranceID" ColumnName="OtherInsuranceID" />
+                <ScalarProperty Name="CmatDeletion_Dt" ColumnName="CmatDeletion_Dt" />
+                <ScalarProperty Name="isCDelete" ColumnName="isCDelete" />
+                <ScalarProperty Name="MfcDeletion_Dt" ColumnName="MfcDeletion_Dt" />
+                <ScalarProperty Name="isMfcDelete" ColumnName="isMfcDelete" />
+                <ScalarProperty Name="CMATReOpenReason" ColumnName="CMATReOpenReason" />
+                <ScalarProperty Name="MFCReOpenReason" ColumnName="MFCReOpenReason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_Assessment">
+            <EntityTypeMapping TypeName="Model.CMAT_Assessment">
+              <MappingFragment StoreEntitySet="CMAT_Assessment">
+                <ScalarProperty Name="CMAT_AssessmentID" ColumnName="CMAT_AssessmentID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="CMATID" ColumnName="CMATID" />
+                <ScalarProperty Name="CMAT_PCID" ColumnName="CMAT_PCID" />
+                <ScalarProperty Name="MedicalSummary" ColumnName="MedicalSummary" />
+                <ScalarProperty Name="PsychosocialSummary" ColumnName="PsychosocialSummary" />
+                <ScalarProperty Name="Agencies" ColumnName="Agencies" />
+                <ScalarProperty Name="GC_DateMeasured" ColumnName="GC_DateMeasured" />
+                <ScalarProperty Name="GC_AgeMeasured" ColumnName="GC_AgeMeasured" />
+                <ScalarProperty Name="GC_AgeinYM" ColumnName="GC_AgeinYM" />
+                <ScalarProperty Name="GC_GestationalAge" ColumnName="GC_GestationalAge" />
+                <ScalarProperty Name="GC_GestationalAgeUnit" ColumnName="GC_GestationalAgeUnit" />
+                <ScalarProperty Name="GC_CorrectedAge" ColumnName="GC_CorrectedAge" />
+                <ScalarProperty Name="GC_CorrectedAgeUnit" ColumnName="GC_CorrectedAgeUnit" />
+                <ScalarProperty Name="GC_Height" ColumnName="GC_Height" />
+                <ScalarProperty Name="GC_HeightUnit" ColumnName="GC_HeightUnit" />
+                <ScalarProperty Name="GC_Weight" ColumnName="GC_Weight" />
+                <ScalarProperty Name="GC_WeightUnit" ColumnName="GC_WeightUnit" />
+                <ScalarProperty Name="GC_HeadCircumference" ColumnName="GC_HeadCircumference" />
+                <ScalarProperty Name="GC_HeadUnit" ColumnName="GC_HeadUnit" />
+                <ScalarProperty Name="GC_BMI" ColumnName="GC_BMI" />
+                <ScalarProperty Name="GC_GrowthConcern" ColumnName="GC_GrowthConcern" />
+                <ScalarProperty Name="GC_OtherGrowthDescription" ColumnName="GC_OtherGrowthDescription" />
+                <ScalarProperty Name="Nutrition1" ColumnName="Nutrition1" />
+                <ScalarProperty Name="N1_Desc" ColumnName="N1_Desc" />
+                <ScalarProperty Name="Nutrition2" ColumnName="Nutrition2" />
+                <ScalarProperty Name="N2_Desc" ColumnName="N2_Desc" />
+                <ScalarProperty Name="Nutrition3" ColumnName="Nutrition3" />
+                <ScalarProperty Name="N3_Desc" ColumnName="N3_Desc" />
+                <ScalarProperty Name="Nutrition_Other" ColumnName="Nutrition_Other" />
+                <ScalarProperty Name="E_OrderedDt" ColumnName="E_OrderedDt" />
+                <ScalarProperty Name="ClinicalSignOff_Name" ColumnName="ClinicalSignOff_Name" />
+                <ScalarProperty Name="ClinicalSignOff_Title" ColumnName="ClinicalSignOff_Title" />
+                <ScalarProperty Name="ClinicalSignOff_Date" ColumnName="ClinicalSignOff_Date" />
+                <ScalarProperty Name="PsychosocialSignOff_Name" ColumnName="PsychosocialSignOff_Name" />
+                <ScalarProperty Name="PsychosocialSignOff_Title" ColumnName="PsychosocialSignOff_Title" />
+                <ScalarProperty Name="PsychosocialSignOff_Date" ColumnName="PsychosocialSignOff_Date" />
+                <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+                <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isSubmitted" ColumnName="isSubmitted" />
+                <ScalarProperty Name="WorkedBy" ColumnName="WorkedBy" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="AmendCount" ColumnName="AmendCount" />
+                <ScalarProperty Name="IsStaffingDone" ColumnName="IsStaffingDone" />
+                <ScalarProperty Name="A_StaffingType" ColumnName="A_StaffingType" />
+                <ScalarProperty Name="S_StaffingDt" ColumnName="S_StaffingDt" />
+                <ScalarProperty Name="S_StaffingType" ColumnName="S_StaffingType" />
+                <ScalarProperty Name="S_StaffingPurpose" ColumnName="S_StaffingPurpose" />
+                <ScalarProperty Name="S_NursingAssessmentUpdate" ColumnName="S_NursingAssessmentUpdate" />
+                <ScalarProperty Name="S_Discussion" ColumnName="S_Discussion" />
+                <ScalarProperty Name="S_TaskList" ColumnName="S_TaskList" />
+                <ScalarProperty Name="S_AdditionalConsiderationsID" ColumnName="S_AdditionalConsiderationsID" />
+                <ScalarProperty Name="S_AdditionalOther" ColumnName="S_AdditionalOther" />
+                <ScalarProperty Name="S_CC" ColumnName="S_CC" />
+                <ScalarProperty Name="S_NextStaffingDt" ColumnName="S_NextStaffingDt" />
+                <ScalarProperty Name="S_SignOffDate" ColumnName="S_SignOffDate" />
+                <ScalarProperty Name="S_AmendCounter" ColumnName="S_AmendCounter" />
+                <ScalarProperty Name="S_isAmend" ColumnName="S_isAmend" />
+                <ScalarProperty Name="S_isDraft" ColumnName="S_isDraft" />
+                <ScalarProperty Name="S_isCompleted" ColumnName="S_isCompleted" />
+                <ScalarProperty Name="MFCID" ColumnName="MFCID" />
+                <ScalarProperty Name="S_ClinicalSignOff_Name" ColumnName="S_ClinicalSignOff_Name" />
+                <ScalarProperty Name="S_ClinicalSignOff_Title" ColumnName="S_ClinicalSignOff_Title" />
+                <ScalarProperty Name="S_ClinicalSignOff_Date" ColumnName="S_ClinicalSignOff_Date" />
+                <ScalarProperty Name="S_PsychosocialSignOff_Name" ColumnName="S_PsychosocialSignOff_Name" />
+                <ScalarProperty Name="S_PsychosocialSignOff_Title" ColumnName="S_PsychosocialSignOff_Title" />
+                <ScalarProperty Name="S_PsychosocialSignOff_Date" ColumnName="S_PsychosocialSignOff_Date" />
+                <ScalarProperty Name="A_StaffingDt" ColumnName="A_StaffingDt" />
+                <ScalarProperty Name="SignOffCount" ColumnName="SignOffCount" />
+                <ScalarProperty Name="S_SignOffCount" ColumnName="S_SignOffCount" />
+                <ScalarProperty Name="S_CompletionDate" ColumnName="S_CompletionDate" />
+                <ScalarProperty Name="S_CurrentStabilityStatement" ColumnName="S_CurrentStabilityStatement" />
+                <ScalarProperty Name="A_SignOffCompletionBy" ColumnName="A_SignOffCompletionBy" />
+                <ScalarProperty Name="S_WorkedBy" ColumnName="S_WorkedBy" />
+                <ScalarProperty Name="S_WorkedDt" ColumnName="S_WorkedDt" />
+                <ScalarProperty Name="S_LevelOfCare" ColumnName="S_LevelOfCare" />
+                <ScalarProperty Name="S_LevelOfReimbursment" ColumnName="S_LevelOfReimbursment" />
+                <ScalarProperty Name="S_Modelwaiver" ColumnName="S_Modelwaiver" />
+                <ScalarProperty Name="S_Duration" ColumnName="S_Duration" />
+                <ScalarProperty Name="S_PsychosocialAssessmentUpdate" ColumnName="S_PsychosocialAssessmentUpdate" />
+                <ScalarProperty Name="S_ProgramEligibility" ColumnName="S_ProgramEligibility" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC">
+            <EntityTypeMapping TypeName="Model.CMAT_PC">
+              <MappingFragment StoreEntitySet="CMAT_PC">
+                <ScalarProperty Name="CMAT_PCID" ColumnName="CMAT_PCID" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="CMATID" ColumnName="CMATID" />
+                <ScalarProperty Name="StaffingDt" ColumnName="StaffingDt" />
+                <ScalarProperty Name="FirstStaffingDt" ColumnName="FirstStaffingDt" />
+                <ScalarProperty Name="FirstStaffingDt2" ColumnName="FirstStaffingDt2" />
+                <ScalarProperty Name="NextStaffingDt" ColumnName="NextStaffingDt" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="StaffingType" ColumnName="StaffingType" />
+                <ScalarProperty Name="C_DischargeDt" ColumnName="C_DischargeDt" />
+                <ScalarProperty Name="CMAT_Status" ColumnName="CMAT_Status" />
+                <ScalarProperty Name="ProgramEligibility" ColumnName="ProgramEligibility" />
+                <ScalarProperty Name="L_Reimbursement" ColumnName="L_Reimbursement" />
+                <ScalarProperty Name="L_Care" ColumnName="L_Care" />
+                <ScalarProperty Name="ModelWaiver" ColumnName="ModelWaiver" />
+                <ScalarProperty Name="PreviousStability" ColumnName="PreviousStability" />
+                <ScalarProperty Name="CurrentStability" ColumnName="CurrentStability" />
+                <ScalarProperty Name="DischargeDisposition" ColumnName="DischargeDisposition" />
+                <ScalarProperty Name="OtherDischarge_D" ColumnName="OtherDischarge_D" />
+                <ScalarProperty Name="MMA_Plan" ColumnName="MMA_Plan" />
+                <ScalarProperty Name="MMA_CM_FN" ColumnName="MMA_CM_FN" />
+                <ScalarProperty Name="MMA_CM_LN" ColumnName="MMA_CM_LN" />
+                <ScalarProperty Name="MMA_Phone1" ColumnName="MMA_Phone1" />
+                <ScalarProperty Name="MMA_Phone2" ColumnName="MMA_Phone2" />
+                <ScalarProperty Name="MMA_Email" ColumnName="MMA_Email" />
+                <ScalarProperty Name="MMA_Address" ColumnName="MMA_Address" />
+                <ScalarProperty Name="AgencyName" ColumnName="AgencyName" />
+                <ScalarProperty Name="Dependency_CM_FN" ColumnName="Dependency_CM_FN" />
+                <ScalarProperty Name="Dependency_CM_LN" ColumnName="Dependency_CM_LN" />
+                <ScalarProperty Name="D_CM_Phone1" ColumnName="D_CM_Phone1" />
+                <ScalarProperty Name="D_CM_Phone2" ColumnName="D_CM_Phone2" />
+                <ScalarProperty Name="D_CM_Email" ColumnName="D_CM_Email" />
+                <ScalarProperty Name="D_CM_Address" ColumnName="D_CM_Address" />
+                <ScalarProperty Name="MFC_P_FN" ColumnName="MFC_P_FN" />
+                <ScalarProperty Name="MFC_P_LN" ColumnName="MFC_P_LN" />
+                <ScalarProperty Name="MFC_P_Phone1" ColumnName="MFC_P_Phone1" />
+                <ScalarProperty Name="MFC_P_Phone2" ColumnName="MFC_P_Phone2" />
+                <ScalarProperty Name="MFC_P_Email" ColumnName="MFC_P_Email" />
+                <ScalarProperty Name="MFC_P_Address" ColumnName="MFC_P_Address" />
+                <ScalarProperty Name="WorkedBy" ColumnName="WorkedBy" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="StaffingTypeComments" ColumnName="StaffingTypeComments" />
+                <ScalarProperty Name="StaffingAttachment" ColumnName="StaffingAttachment" />
+                <ScalarProperty Name="MFCID" ColumnName="MFCID" />
+                <ScalarProperty Name="MPC_MFCReferralDt" ColumnName="MPC_MFCReferralDt" />
+                <ScalarProperty Name="MPC_ClientPlaced" ColumnName="MPC_ClientPlaced" />
+                <ScalarProperty Name="MPC_Comments" ColumnName="MPC_Comments" />
+                <ScalarProperty Name="MPC_ClientOrigination" ColumnName="MPC_ClientOrigination" />
+                <ScalarProperty Name="MPC_ClientOrigination_Other" ColumnName="MPC_ClientOrigination_Other" />
+                <ScalarProperty Name="MPC_AdmitDt" ColumnName="MPC_AdmitDt" />
+                <ScalarProperty Name="MPC_DischargeDt" ColumnName="MPC_DischargeDt" />
+                <ScalarProperty Name="MPC_L_Care" ColumnName="MPC_L_Care" />
+                <ScalarProperty Name="MPC_DischargeDest" ColumnName="MPC_DischargeDest" />
+                <ScalarProperty Name="MPC_DischargeDest_Other" ColumnName="MPC_DischargeDest_Other" />
+                <ScalarProperty Name="MPC_ReasonNotPlaced" ColumnName="MPC_ReasonNotPlaced" />
+                <ScalarProperty Name="MPC_ReasonNotPlaced_Other" ColumnName="MPC_ReasonNotPlaced_Other" />
+                <ScalarProperty Name="First_L_Care" ColumnName="First_L_Care" />
+                <ScalarProperty Name="First_L_Reimbursement" ColumnName="First_L_Reimbursement" />
+                <ScalarProperty Name="MMA_Phone1Ext" ColumnName="MMA_Phone1Ext" />
+                <ScalarProperty Name="MMA_Phone2Ext" ColumnName="MMA_Phone2Ext" />
+                <ScalarProperty Name="D_CM_Phone1Ext" ColumnName="D_CM_Phone1Ext" />
+                <ScalarProperty Name="D_CM_Phone2Ext" ColumnName="D_CM_Phone2Ext" />
+                <ScalarProperty Name="MFC_P_Phone1Ext" ColumnName="MFC_P_Phone1Ext" />
+                <ScalarProperty Name="MFC_P_Phone2Ext" ColumnName="MFC_P_Phone2Ext" />
+                <ScalarProperty Name="MFC_StatusID" ColumnName="MFC_StatusID" />
+                <ScalarProperty Name="MFC_StatusID_Dt" ColumnName="MFC_StatusID_Dt" />
+                <ScalarProperty Name="LOC_StartDt" ColumnName="LOC_StartDt" />
+                <ScalarProperty Name="LOC_EndDt" ColumnName="LOC_EndDt" />
+                <ScalarProperty Name="TotalApprovedDuuration" ColumnName="TotalApprovedDuuration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFC_Status_LK">
+            <EntityTypeMapping TypeName="Model.MFC_Status_LK">
+              <MappingFragment StoreEntitySet="MFC_Status_LK">
+                <ScalarProperty Name="MFC_StatusID" ColumnName="MFC_StatusID" />
+                <ScalarProperty Name="MFC_Status" ColumnName="MFC_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="Model.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="MasterID" ColumnName="MasterID" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+                <ScalarProperty Name="WorkedBy" ColumnName="WorkedBy" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CM_AttachmentType_LK">
+            <EntityTypeMapping TypeName="Model.CM_AttachmentType_LK">
+              <MappingFragment StoreEntitySet="CM_AttachmentType_LK">
+                <ScalarProperty Name="AttachmentType" ColumnName="AttachmentType" />
+                <ScalarProperty Name="A_TypeID" ColumnName="A_TypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC_DischargeDisposition_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_PC_DischargeDisposition_LK">
+              <MappingFragment StoreEntitySet="CMAT_PC_DischargeDisposition_LK">
+                <ScalarProperty Name="D_DispositionName" ColumnName="D_DispositionName" />
+                <ScalarProperty Name="D_DispositionID" ColumnName="D_DispositionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC_MFC_ClientOrigination_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_PC_MFC_ClientOrigination_LK">
+              <MappingFragment StoreEntitySet="CMAT_PC_MFC_ClientOrigination_LK">
+                <ScalarProperty Name="ClientOrigination" ColumnName="ClientOrigination" />
+                <ScalarProperty Name="ClientOriginationID" ColumnName="ClientOriginationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC_MFC_DischargeDest_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_PC_MFC_DischargeDest_LK">
+              <MappingFragment StoreEntitySet="CMAT_PC_MFC_DischargeDest_LK">
+                <ScalarProperty Name="DischargeDestDesc" ColumnName="DischargeDestDesc" />
+                <ScalarProperty Name="DischargeDestID" ColumnName="DischargeDestID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC_MFC_Reason_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_PC_MFC_Reason_LK">
+              <MappingFragment StoreEntitySet="CMAT_PC_MFC_Reason_LK">
+                <ScalarProperty Name="ReasonDesc" ColumnName="ReasonDesc" />
+                <ScalarProperty Name="MFCPC_ReasonID" ColumnName="MFCPC_ReasonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_PC_MPC_LevelOfCare_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_PC_MPC_LevelOfCare_LK">
+              <MappingFragment StoreEntitySet="CMAT_PC_MPC_LevelOfCare_LK">
+                <ScalarProperty Name="MPC_LevelOfCare" ColumnName="MPC_LevelOfCare" />
+                <ScalarProperty Name="MPC_L_CareID" ColumnName="MPC_L_CareID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMAT_Staffing_Discharge_LK">
+            <EntityTypeMapping TypeName="Model.CMAT_Staffing_Discharge_LK">
+              <MappingFragment StoreEntitySet="CMAT_Staffing_Discharge_LK">
+                <ScalarProperty Name="Discharge_Reason" ColumnName="Discharge_Reason" />
+                <ScalarProperty Name="Discharge_ID" ColumnName="Discharge_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
